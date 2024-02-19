@@ -15,3 +15,13 @@
 </app-zippy2>
 
 <app-banana-in-a-box></app-banana-in-a-box>
+
+<div>
+  <h4>Truc Console</h4>
+  <app-truc (trucEmitter)="consoleTruc($event)"></app-truc>
+</div>
+
+<div>
+  <h4>Truc Alert</h4>
+  <app-truc (trucEmitter)="alertTruc($event)"></app-truc>
+</div>
