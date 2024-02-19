@@ -1,0 +1,14 @@
+<div class="banane">
+    <h3>{{title}}</h3>
+    <button (click)="toggleIsVisible()">
+    {{btnText}}
+    </button>
+</div>
+
+<p [hidden]="!isVisible">
+    <ng-content></ng-content>
+</p>
+
+<footer>
+    <ng-content select=".footer"></ng-content>
+</footer>
