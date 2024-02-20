@@ -27,6 +27,19 @@
 </div>
 
 <h1>Nombre de clics sur un bouton favori : {{ favoriteButtonClickCount }}</h1>
-<app-exo-favorite [favName]="favName1" [isFavorite]="isFirstFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
-<app-exo-favorite [favName]="favName2" [isFavorite]="isSecondFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
-<app-exo-favorite [favName]="favName3" [isFavorite]="isThirdFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+<app-exo-favorite [favName]="favName1"  (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+<app-exo-favorite [favName]="favName2"  (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+<app-exo-favorite [favName]="favName3"  (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+
+<!-- correction de l'exo -->
+
+<p>
+  {{favoriteClickCount}} click sur les composants favoris
+</p>
+
+<p>
+  {{becameFavoriteCount}} passage à l'état favori.
+</p>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)"></app-is-favorite>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)" [isFavorite]="true"></app-is-favorite>
+<app-is-favorite (isFavoriteToggle)="incrementFavoriteCount($event)"></app-is-favorite>

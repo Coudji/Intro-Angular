@@ -6,11 +6,12 @@ import { ZippyComponent2 } from './zippy2/zippy2.component';
 import { BananaInABoxComponent } from './banana-in-a-box/banana-in-a-box.component';
 import { TrucComponent } from './truc/truc.component';
 import { ExoFavoriteComponent } from './exo-favorite/exo-favorite.component';
+import { IsFavoriteComponent } from './is-favorite/is-favorite.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SuperComponentsComponent, ZippyComponent, ZippyComponent2, BananaInABoxComponent, TrucComponent, ExoFavoriteComponent],
+  imports: [RouterOutlet, SuperComponentsComponent, ZippyComponent, ZippyComponent2, BananaInABoxComponent, TrucComponent, ExoFavoriteComponent, IsFavoriteComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.sass'
 })
@@ -29,13 +30,23 @@ export class AppComponent {
   favName1= "Louttre";
   favName2= "Banane";
   favName3= "Mauve";
-  isFirstFavorite: boolean = false;
-  isSecondFavorite: boolean = false;
-  isThirdFavorite: boolean = false;
 
   updateFavoriteCount(isFavorite: boolean) {
     if (isFavorite) {
       this.favoriteButtonClickCount++;
     }
   }
+
+  //correction de l'exo
+  favoriteClickCount = 0;
+  becameFavoriteCount = 0;
+
+  incrementFavoriteCount(isFavorite:boolean) {
+    this.favoriteClickCount++;
+
+    if(isFavorite){
+      this.becameFavoriteCount++
+    }
+  }
+
 }
