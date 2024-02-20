@@ -25,3 +25,8 @@
   <h4>Truc Alert</h4>
   <app-truc (trucEmitter)="alertTruc($event)"></app-truc>
 </div>
+
+<h1>Nombre de clics sur un bouton favori : {{ favoriteButtonClickCount }}</h1>
+<app-exo-favorite [favName]="favName1" [isFavorite]="isFirstFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+<app-exo-favorite [favName]="favName2" [isFavorite]="isSecondFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
+<app-exo-favorite [favName]="favName3" [isFavorite]="isThirdFavorite" (isFavoriteChange)="updateFavoriteCount($event)"></app-exo-favorite>
